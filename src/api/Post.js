@@ -4,9 +4,12 @@ import PostCard from "./PostCard";
 import "./Post.css";
 function Post() {
   const [Post, setPost] = useState([]);
+  const [Users, setUsers] = useState([]);
   const fetchData = async () => {
     try {
       const url = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const aut = await axios.get("https://jsonplaceholder.typicode.com/users");
+      setUsers(aut.data);
       setPost(url.data);
     } catch (error) {
       console.log("error =>", error);
