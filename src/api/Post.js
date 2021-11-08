@@ -10,6 +10,7 @@ function Post() {
       const url = await axios.get("https://jsonplaceholder.typicode.com/posts");
       const aut = await axios.get("https://jsonplaceholder.typicode.com/users");
       setUsers(aut.data);
+
       setPost(url.data);
     } catch (error) {
       console.log("error =>", error);
@@ -18,11 +19,18 @@ function Post() {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div>
       <div id="CardPost">
         {Post.map((post) => {
-          return <PostCard title={post.title} body={post.body} />;
+          return (
+            <PostCard
+              title={post.title}
+              body={post.body}
+              name={Users.find((i) => i.id == post.userId)}
+            />
+          );
         })}
       </div>
     </div>
