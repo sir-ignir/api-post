@@ -1,4 +1,4 @@
 #CardPost {
   display: grid;
-  grid: repeat(20, 180px) / auto-flow;
+  grid: repeat(20, 450px) / auto-flow;
 }
