@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PostCard from "./PostCard";
 import "./Post.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 function Post() {
   const [isLoading, setIsLoading] = useState(true);
   const [Post, setPost] = useState([]);
@@ -41,11 +40,6 @@ function Post() {
           })}
         </div>
       )}
-      <BrowserRouter>
-        <Routes>
-          <Route></Route>
-        </Routes>
-      </BrowserRouter>
     </div>
   );
 }
