@@ -1,13 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Post from "./api/Post";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./page/home";
+import SinglePost from "./page/SinglePost";
 
 function App() {
   return (
-    <div className="App">
-      <h1>post api</h1>
-      <Post />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/posts/:id" element={<SinglePost />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

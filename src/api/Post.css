@@ -1,4 +1,14 @@
 #CardPost {
   display: grid;
-  grid: repeat(20, 450px) / auto-flow;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
+  grid-gap: 10px;
+}
+body {
+  max-height: 1000px;
+}
+.postCardContainer {
+  border: black 2px solid;
+}
+img {
+  width: 100%;
 }
